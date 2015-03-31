@@ -1,0 +1,77 @@
+/*git basic document*/
+
+
+//配置阶段
+//配置用户名
+$ git config --global user.name "Your Name"
+
+//配置邮箱
+$ git config --global user.email "email@example.com"
+
+//定位到e盘下
+$ cd /e/
+
+//新建文件夹。e.g. gitSpace
+$ mkdir gitSpace
+
+//定位到新建的文件夹下
+$ cd /e/gitSpace/
+
+//将目标文件夹初始化为git库
+$ git init
+
+//创建版本库
+//以demo.txt为例，将此文件添加到库
+$ git add demo.txt
+
+//记录此次添加动作
+$ git commit -m "add a demo file"
+
+//管理版本
+//查看库状态，如文件是否被修改过。e.g. "#    modified:   domo.txt"
+$ git status
+
+//查看文件修改痕迹，差异
+$ git diff demo.txt
+
+//提交修改过的文件以记录版本
+$ git add demo.txt
+$ git commit -m "changed demo.txt"
+
+//库中文件均已为最新版本时的提示
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+
+//查看提交日志 完整版&简约版 版本号，例：ea34578d5496d7dd233c827ed32a8cd576c5ee85 记录，例：changed demo.txt
+$ git log
+$ git log --pretty=oneline
+
+//回滚至上一版本，记数为'^'，或'HEAD~n'
+$ git reset --hard HEAD^
+
+//前进至下一版本，例：rollback前的版本为ea3457******
+$ git reset --hard ea3457
+
+//查看命令历史
+$ git reflog
+
+//add执行单个添加，commit执行多个（所有）修改
+
+/*new tips start from here*/
+//修改了文件但还未用add提交到暂存区时，丢弃修改
+$ git checkout -- demo.txt
+
+//修改了文件并add提交到暂存区，但没有commit时，从暂存区删除并丢弃修改
+$ git reset HEAD demo.txt
+$ git checkout -- demo.txt
+
+//删除物理文件
+$ rm demo.txt
+
+//分支1：确认并删除库中的文件
+$ git rm demo.txt
+$ git commit -m "remove demo.txt"
+
+//分支2：将库中文件恢复到物理文件，但是只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。
+$ git checkout -- test.txt
