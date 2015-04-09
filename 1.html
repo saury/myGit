@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			border:none;
+			margin: 0px;
+			padding: 0px;
+		}
+		body{
+			width:740px;	
+		}
+		#mapsec{
+			position: relative;
+		}
+		.mapsecs{
+			cursor: pointer;
+		}
+		#hoverRec{
+			width:8px;
+			height:8px;
+			background: #000;
+			position:absolute;
+			top: 0px;
+			left: 0px;
+			cursor: pointer;
+			display: none;
+		}
+		.locationName{
+			display: none;
+			position: absolute;
+		}
+		#location0{
+			top: 142px;
+			left: 60px;
+		}
+		#location1{
+			top: 129px;
+			left: 156px;
+		}
+		#location2{
+			top: 168px;
+			left: 205px;
+		}
+		#location3{
+			top: 147px;
+			left: 215px;
+		}
+		#location4{
+			top: 144px;
+			left: 295px;
+		}
+		#location5{
+		    top: 126px;
+		    left: 275px;
+		}
+		#location6{
+			top: 116px;
+			left: 307px;
+		}
+		#location7{
+			top: 158px;
+			left: 380px;
+		}
+		#location8{	
+			top: 122px;
+			left: 375px;
+		}
+		#location9{	
+			top: 134px;
+			left: 379px;
+		}
+		#location10{		
+			top: 107px;
+			left: 382px;
+		}
+		#location11{		
+			top: 146px;
+			left: 387px;
+		}
+		#location12{	
+			top: 133px;
+			left: 627px;
+		}
+		#mapCnt{
+			width:350px;
+			border:1px solid #000;
+			background-color: #fff;
+			opacity: 0.8;
+			position:absolute;
+			top:0px;
+			right:0px;
+		}
+		#mapCnt>div>span{
+			border-bottom: 2px solid #ccc;
+			padding: 0px 10px;
+		}
+		.cntTxtL{
+            width:120%;
+            margin-left:-200px;
+            float:left;
+        }
+        .cntTxtLL{
+            margin-left:200px;
+        }
+        .cntTxtR{
+            float:left;
+        }
+        #CntText{
+        }
+	</style>
+</head>
+<body>
+	<h1>Produktionsstandorte</h1>
+	<p>An 13 internationalen Standorten sind wir weltweit für unzählige Kunden aus Industrie,
+	Produktion und Weiterverarbeitung aktiv. Mit innovativen Produkten und einem erstklassigen
+	Seriveangebot bieten wir technisch anspruchsvolle Komplettlösungen für nahezu alle
+	Schleifanwendungen. Mit 3M Präszisionsschleiftechnik erzielen Sie beste Ergebnisse bei
+	überragender Wirtschaftlichkeit. Und dank unseres weltweiten Servicenetzes werden
+	Stillstandzeiten im Störungsfall minimiert.</p>
+	<div id="mapsec">
+		<img src="Karte1.jpg" alt="" width="740" usemap="#worldmap">
+		<div id="hoverRec">&nbsp;</div>
+		<div class="locationName" id="location0">Montrose</div>
+		<div class="locationName" id="location1">Wixom</div>
+		<div class="locationName" id="location2">Royersford</div>
+		<div class="locationName" id="location3">Whippany</div>
+		<div class="locationName" id="location4">Nivelle</div>
+		<div class="locationName" id="location5">Meerbusch</div>
+		<div class="locationName" id="location6">Hameln</div>
+		<div class="locationName" id="location7">Egnach</div>
+		<div class="locationName" id="location8">Jena</div>
+		<div class="locationName" id="location9">Niederstetten</div>
+		<div class="locationName" id="location10">Västervik</div>
+		<div class="locationName" id="location11">Villach</div>
+		<div class="locationName" id="location12">Taicang</div>
+		<map name="worldmap" id="worldmap">
+		</map>
+		<div id="mapCnt">
+			<div style="position:relative;">
+
+				<span id="CntTitle">Wendt GmbH, Standort Hameln</span>
+				
+	        	<div id="CntText"></div>
+
+	        	<div id="CntImg"></div>
+								
+				<p id="CntPro">Produktfokus: </p>
+			</div>
+		</div>
+	</div>
+<script>
+//initialize the world map
+!function(){
+	var x=[128,183,191,206,349,355,358,366,366,368,373,377,614],
+    	y=[152,149,165,156,148,142,138,154,131,142,117,153,142];
+	for (var i = 0; i < x.length; i++) {
+	  var node=document.createElement("area");
+	  node.setAttribute("id","mapsec_"+i);
+	  node.setAttribute("class","mapsecs");
+	  node.setAttribute("shape","rect");
+	  node.setAttribute("coords",x[i]+","+y[i]+","+(x[i]+5)+","+(y[i]+5));
+
+	  node.setAttribute("onmouseover","document.getElementById('location"+i+"').style.display='block';document.getElementById('hoverRec').style.background='#000';document.getElementById('hoverRec').style.display='block';document.getElementById('hoverRec').style.left='"+(x[i]-2)+"px';document.getElementById('hoverRec').style.top='"+(y[i]-2)+"px';showDetails("+i+")");
+	  document.getElementById('worldmap').appendChild(node);
+	}
+
+	//unique configuration for red point
+	var redPoint=document.getElementById('mapsec_5');
+	redPoint.setAttribute("coords",x[5]+","+y[5]+","+(x[5]+8)+","+(y[5]+8));
+	redPoint.setAttribute("onmouseover","document.getElementById('location5').style.display='block';document.getElementById('hoverRec').style.background='red';document.getElementById('hoverRec').style.display='block';document.getElementById('hoverRec').style.left='"+(x[5]-1)+"px';document.getElementById('hoverRec').style.top='"+(y[5]-1)+"px';");
+
+	//hide rec and text when mouseout
+	document.getElementById('hoverRec').setAttribute("onmouseout","hideRecText()")
+
+}();
+
+function hideRecText(){
+	document.getElementById('hoverRec').style.display='none';
+	for (var i = 0; i < 13; i++) {
+		document.getElementById('location'+i).style.display='none';
+
+	}
+}
+function showDetails(num){
+
+//1st step: remove all the details
+document.getElementById('CntText').innerHTML="";
+document.getElementById("CntImg").innerHTML="";
+document.getElementById("CntPro").innerHTML="Produktfokus: ";
+
+var cntDetail=[
+	["Werk Montrose / CO /USA",{"Marktfokus":"Öl&Gas","Schleifscheiben für Schneidwerkzeuge":"Wendeschneidplatten / Rotierende Werkzeuge Keramik / Holzbearbeitung"},["Montrose/01-Montrose.jpg"],"Kunstharzgebundene Schleifscheiben, Polyimide Wheels, Hybridgebundene Schleifscheiben Wheels, EC Blades – Electro Chemical Grinding, Durchmesser: ½” to 14” / Dicke: 1/16”-10”+"],
+	["Werk Wixom / MI / USA",{"Marktfokus":"Schneidwerkzeuge, Spezialwerkzeuge, Glasindustrie"},["Montrose/01-Montrose.jpg","Wixom/01-Wixom.jpg"],"Keramisch- und Kunstharzbindungen, Abrichtwerkzeuge, Pencil Edge Wheels"]
+	];
+//add title
+document.getElementById("CntTitle").innerHTML=cntDetail[num][0];
+//add text
+for(arg in cntDetail[num][1]){
+	var nodeL=document.createElement("div"),
+		nodeLL=document.createElement("div"),
+		nodeR=document.createElement("div")
+		;
+	nodeL.setAttribute("class","cntTxtL");
+	nodeLL.setAttribute("class","cntTxtLL");
+	nodeLL.innerHTML=arg;
+	nodeR.setAttribute("class","cntTxtR");
+	nodeR.innerHTML=cntDetail[num][1][arg];
+	nodeL.appendChild(nodeLL);
+	document.getElementById('CntText').appendChild(nodeL);
+	document.getElementById('CntText').appendChild(nodeR);
+	}
+//add images
+if(cntDetail[num][2]){
+	for (var imgNum = 0; imgNum < cntDetail[num][2].length; imgNum++) {
+		document.getElementById("CntImg").innerHTML+='<img src="'+cntDetail[num][2][imgNum]+'" />';
+	};
+}
+//add products
+document.getElementById("CntPro").innerHTML+=cntDetail[num][3];
+}
+			
+</script>
+</body>
+</html>
