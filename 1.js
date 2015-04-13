@@ -8,8 +8,8 @@
 	  node.setAttribute("class","mapsecs");
 	  node.setAttribute("shape","rect");
 	  node.setAttribute("coords",x[i]+","+y[i]+","+(x[i]+5)+","+(y[i]+5));
-
-	  node.setAttribute("onmouseover","document.getElementById('location"+i+"').style.display='block';document.getElementById('hoverRec').style.background='#000';document.getElementById('hoverRec').style.display='block';document.getElementById('hoverRec').style.left='"+(x[i]-2)+"px';document.getElementById('hoverRec').style.top='"+(y[i]-2)+"px';showDetails("+i+")");
+	  
+	  node.setAttribute("onmouseover","document.getElementById('location"+i+"').style.display='block';document.getElementById('hoverRec').style.background='#000';document.getElementById('hoverRec').setAttribute('loc-date',"+i+");document.getElementById('hoverRec').style.display='block';document.getElementById('hoverRec').style.left='"+(x[i]-2)+"px';document.getElementById('hoverRec').style.top='"+(y[i]-2)+"px';showDetails("+i+")");
 	  document.getElementById('worldmap').appendChild(node);
 	}
 
@@ -19,15 +19,17 @@
 	redPoint.setAttribute("onmouseover","document.getElementById('location5').style.display='block';document.getElementById('hoverRec').style.background='red';document.getElementById('hoverRec').style.display='block';document.getElementById('hoverRec').style.left='"+(x[5]-1)+"px';document.getElementById('hoverRec').style.top='"+(y[5]-1)+"px';showDetails(5)");
 
 	//hide rec and text when mouseout
-	document.getElementById('hoverRec').setAttribute("onmouseout","hideRecText()")
+	document.getElementById('hoverRec').setAttribute("onmouseout","hideRecText()");
 
 }();
 
 function hideRecText(){
+	if(document.getElementById("mapCnt").style.display!="block"){
 	document.getElementById('hoverRec').style.display='none';
 	for (var i = 0; i < 13; i++) {
 		document.getElementById('location'+i).style.display='none';
 
+		}
 	}
 }
 function showDetails(num){
@@ -39,7 +41,7 @@ document.getElementById("CntPro").innerHTML="Produktfokus: ";
 
 var cntDetail=[
 	["Werk Montrose / CO /USA",{"Marktfokus:":"Öl&Gas","Schleifscheiben für Schneidwerkzeuge:":"Wendeschneidplatten / Rotierende Werkzeuge Keramik / Holzbearbeitung"},["Montrose/01-Montrose.jpg"],"Kunstharzgebundene Schleifscheiben, Polyimide Wheels, Hybridgebundene Schleifscheiben Wheels, EC Blades – Electro Chemical Grinding, Durchmesser: ½” to 14” / Dicke: 1/16”-10”+"],
-	["Werk Wixom / MI / USA",{"Marktfokus:":"Schneidwerkzeuge, Spezialwerkzeuge, Glasindustrie"},["Montrose/01-Montrose.jpg","Wixom/01-Wixom.jpg"],"Keramisch- und Kunstharzbindungen, Abrichtwerkzeuge, Pencil Edge Wheels"],
+	["Werk Wixom / MI / USA",{"Marktfokus:":"Schneidwerkzeuge, Spezialwerkzeuge, Glasindustrie"},["Wixom/1.jpg"],"Keramisch- und Kunstharzbindungen, Abrichtwerkzeuge, Pencil Edge Wheels"],
 	["Werk Royersford /PA/ Chester Springs / USA",{"Werksgründung: ":"1969 (Dunnington Company)<br />Seit 1977 Herstellung von galvanischen Abrichtrollen<br />Seit 1987 Teil der Wendt-Group","Marktfokus: ":"Automotive (Turbinenindustrie, Getriebe/Motorenbau, Lager, Verzahnung, Stahlwerke, Walzenindustrie Metallografie & Halbleiterindustrie"},["Royersford/01-Royersford.jpg"],"Keramisch gebundene CBN Werkzeuge, Galvanische Abrichtwerkzeuge, Direct Plated Tools  / Compound and Slurries, Konventionelle Schleifwerkzeuge, Großtrennscheiben / Finishing Film"],
 	["Werk Whippany / NJ / USA",{"Marktfokus: ":"Öl & Gas, Rotierende Schenidwerkzeuge, Dentalbohrer, Holzindustrie / Keramik / PCD & PCBN"},["Whippany/01-Whippany.jpg"],"Produktfokus, Diverse Bindungen, Kunstharz, Keramisch, Metall& Hybrid, Diamantabrichtrollen"],
 	["Wendt GmbH, Nivelle",{"Gründung Diamant Boart: ":"1939","Übernahme durch Wendt GmbH: ":"1997","Werkseröffnung in Nivelle: ":"2004","Werksfläche: ":"16.400 qm","Anzahl der Mitarbeiter: ":"129"},["Nivelle/01-Nivelle.jpg","Nivelle/02-Nivelle.jpg"],"Schleif-und Bohrwerkzeuge für die Glasindustrie, Galvanisch gebundene Werkzeuge"],
@@ -61,7 +63,8 @@ else{hideCntDetails();document.getElementById("mapCnt").style.left="0px";}
 document.getElementById("CntTitle").innerHTML=cntDetail[num][0];
 //add text
 for(arg in cntDetail[num][1]){
-	var nodeTR=document.createElement("tr"),
+	var nodeTable=document.createElement("table"),
+		nodeTR=document.createElement("tr"),
 		nodeTD1=document.createElement("td"),
 		nodeTD2=document.createElement("td")
 		;
@@ -69,6 +72,7 @@ for(arg in cntDetail[num][1]){
 	nodeTD2.innerHTML=cntDetail[num][1][arg];
 	nodeTR.appendChild(nodeTD1);
 	nodeTR.appendChild(nodeTD2);
+	nodeTable.appendChild(nodeTR);
 	document.getElementById('CntText').appendChild(nodeTR);
 	}
 //add images
@@ -88,8 +92,10 @@ function hideCntDetails(){
 	document.getElementById("mapCnt").style.left="";
 	document.getElementById("mapCnt").style.right="";
 }
-function showCntDetails(){
+function showCntDetails(arg){
 	document.getElementById("mapCnt").style.display="block";
+	document.getElementById("hoverRec").style.display="block";
+	document.getElementById("location"+arg.getAttribute("loc-date")).style.display="block";
 }
 function setMapsecH(){
 	if(document.getElementById("mapCnt").style.display!="none"){
@@ -101,4 +107,8 @@ function setMapsecH(){
 function recoverMapSec(){
 	document.getElementById("mapCnt").style.display="none";
 	document.getElementById("mapsec").style.height="auto";
+	hideRecText();
+}
+function showCover() {
+	document.getElementById("coverLayout").style.display="block";
 }

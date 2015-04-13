@@ -88,14 +88,13 @@
 		#mapCnt{
 			width: 360px;
 			border:1px solid #000;
-			background-color: #fff;
-			opacity: 0.8;
+			/*background-color: #fff;
+			filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+			opacity: 0.8;*/
 			position:absolute;
 			top:20px;
 			display: none;
-		}
-		#CntTitle{
-			text-align: center;
+			z-index: 100;
 		}
 		#CntImg img{
 			margin:10px 0px;
@@ -114,8 +113,8 @@
 	überragender Wirtschaftlichkeit. Und dank unseres weltweiten Servicenetzes werden
 	Stillstandzeiten im Störungsfall minimiert.</p>
 	<div id="mapsec">
-		<img src="Karte1.jpg" alt="" width="740" usemap="#worldmap" onclick='recoverMapSec()'>
-		<div id="hoverRec" onclick="showCntDetails();setMapsecH()" onmouseover="setMapsecH()">&nbsp;</div>
+		<img src="Karte1.jpg" alt="" width="740" usemap="#worldmap">
+		<div id="hoverRec" onclick="showCntDetails(this);setMapsecH();showCover();" onmouseover="setMapsecH()">&nbsp;</div>
 		<div class="locationName" id="location0">Montrose</div>
 		<div class="locationName" id="location1">Wixom</div>
 		<div class="locationName" id="location2">Royersford</div>
@@ -132,16 +131,17 @@
 		<map name="worldmap" id="worldmap">
 		</map>
 		<div id="mapCnt">
-			<div></div>
+			<div style="position:absolute; top:0px;left:0px;width:100%;height:100%;background:#fff;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);opacity:0.8;"></div>
 			<div style="position:relative; padding:10px;">
 				<h3 id="CntTitle"></h3>
-				<hr style="height:1px;border:none;border-top:1px solid green;margin: 0px 10px;">
-	        	<table id="CntText"></table>
+				<hr style="height:1px;border:none;border-top:2px solid green;margin: 0px;">
+	        	<div id="CntText"></div>
 	        	<div id="CntImg"></div>		
 				<p id="CntPro">Produktfokus: </p>
 			</div>
 		</div>
 	</div>
+	<div id="coverLayout" style="position:absolute; top:0px;left:0px;width:100%;height:100%;background:#fff;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);opacity:0;z-index:99;display:none;" onclick="this.style.display='none';recoverMapSec();">&nbsp;</div>
 <script src="1.js"></script>
 </body>
 </html>
