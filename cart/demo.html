@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="css/2015-1-21-index-css.css" rel="stylesheet" type="text/css" />
+    <link href="css/country2015css.css" rel="stylesheet" type="text/css" />
+    <link href="css/rightlayer1121css.css" rel="stylesheet" type="text/css" />
+
+    <!-- new added -->
+    <link href="css/cart_sidebar.css" rel="stylesheet" type="text/css" />
+    <link href="css/new_index.css" rel="stylesheet" type="text/css" />
+    <!-- new added -->
+
+    <script src="js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<div class="top2015-1">
+    <div class="wraper">
+        <div class="top2015-1-left">
+            <div class="topwenzi-1">Hi，欢迎来86&nbsp;&nbsp;&nbsp;&nbsp;请</div>
+            <div class="topbtn-1"><a rel="nofollow" href="/?act=login">登录</a></div>
+            <div class="topwenzi-1">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div class="topbtn-1"><a rel="nofollow" href="/?act=register">免费注册</a></div>
+            <div class="topwenzi-1">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div class="topwenzi-2">收货国家：</div>
+            <!--国家浮出层-->
+            <div class="country-box-show">
+                <div class="switch-country">
+                    <div class="country-selector ctr-info" ctr="{'area':'country'}">
+                        <a class="btn btn-mini dropdown-toggle countrytoggleclass" data-toggle="dropdown" href="javascript:void(0);">
+                            <em class="litb-icon-flag us"></em>
+                            <span class="curCountry" data-abbr="us" data-country-name="United States">United States</span>
+                            <span class="curCountry_ch" style="margin-left:5px;">美国</span>
+                        </a>
+                        <div class="dropdown-menu" style="display: none;" role="menu" aria-labelledby="dLabel">
+                            <div class="filter-input"><em class="litb-icon-search"></em>
+                                <input name="c_name" id="c_name" onkeydown="show_countries(this.value);" onkeyup="show_countries(this.value);" type="text">
+                            </div>
+                            <div class="country-list">
+                                <ul class="reco-country-list">
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;us&quot;}" href="javascript:void(0);"><em class="litb-icon-flag us"></em><span class="english" data-abbr="us">United States</span><span class="chinese">美国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;au&quot;}" href="javascript:void(0);"><em class="litb-icon-flag au"></em><span class="english" data-abbr="au">Australia</span><span class="chinese">澳大利亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ca&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ca"></em><span class="english" data-abbr="ca">Canada</span><span class="chinese">加拿大</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gb&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gb"></em><span class="english" data-abbr="gb">United Kingdom</span><span class="chinese">英国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;nz&quot;}" href="javascript:void(0);"><em class="litb-icon-flag nz"></em><span class="english" data-abbr="nz">New Zealand</span><span class="chinese">新西兰</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;my&quot;}" href="javascript:void(0);"><em class="litb-icon-flag my"></em><span class="english" data-abbr="my">Malaysia</span><span class="chinese">马来西亚</span></a></li>
+                                </ul>
+                                <ul>
+                                    <li class="divider" style="display: list-item;"></li>
+                                </ul>
+                                <ul class="full-country-list">
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ar&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ar"></em><span class="english" data-abbr="ar">Argentina</span><span class="chinese">阿根廷</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;af&quot;}" href="javascript:void(0);"><em class="litb-icon-flag af"></em><span class="english" data-abbr="af">Afghanistan</span><span class="chinese">阿富汗</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;al&quot;}" href="javascript:void(0);"><em class="litb-icon-flag al"></em><span class="english" data-abbr="al">Albania</span><span class="chinese">阿尔巴尼亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;dz&quot;}" href="javascript:void(0);"><em class="litb-icon-flag dz"></em><span class="english" data-abbr="dz">Algeria</span><span class="chinese">阿尔及利亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;as&quot;}" href="javascript:void(0);"><em class="litb-icon-flag as"></em><span class="english" data-abbr="as">American Samoa</span><span class="chinese">萨摩亚群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ad&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ad"></em><span class="english" data-abbr="ad">Andorra</span><span class="chinese">安道尔</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ao&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ao"></em><span class="english" data-abbr="ao">Angola</span><span class="chinese">安哥拉</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ai&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ai"></em><span class="english" data-abbr="ai">Anguilla</span><span class="chinese">安圭拉</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ag&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ag"></em><span class="english" data-abbr="ag">Antigua and Barbuda</span><span class="chinese">安提瓜和巴布达</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ar&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ar"></em><span class="english" data-abbr="ar">Argentina</span><span class="chinese">阿根廷</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;am&quot;}" href="javascript:void(0);"><em class="litb-icon-flag am"></em><span class="english" data-abbr="am">Armenia</span><span class="chinese">亚美尼亚共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;aw&quot;}" href="javascript:void(0);"><em class="litb-icon-flag aw"></em><span class="english" data-abbr="aw">Aruba</span><span class="chinese">阿鲁巴</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;au&quot;}" href="javascript:void(0);"><em class="litb-icon-flag au"></em><span class="english" data-abbr="au">Australia</span><span class="chinese">澳大利亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;at&quot;}" href="javascript:void(0);"><em class="litb-icon-flag at"></em><span class="english" data-abbr="at">Austria</span><span class="chinese">奥地利</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;az&quot;}" href="javascript:void(0);"><em class="litb-icon-flag az"></em><span class="english" data-abbr="az">Azerbaijan</span><span class="chinese">阿塞拜疆</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;bs&quot;}" href="javascript:void(0);"><em class="litb-icon-flag bs"></em><span class="english" data-abbr="bs">Bahamas</span><span class="chinese">巴哈马</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;bh&quot;}" href="javascript:void(0);"><em class="litb-icon-flag bh"></em><span class="english" data-abbr="bh">Bahrain</span><span class="chinese">巴林</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;bd&quot;}" href="javascript:void(0);"><em class="litb-icon-flag bd"></em><span class="english" data-abbr="bd">Bangladesh</span><span class="chinese">孟加拉国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;bb&quot;}" href="javascript:void(0);"><em class="litb-icon-flag bb"></em><span class="english" data-abbr="bb">Barbados</span><span class="chinese">巴巴多斯</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;by&quot;}" href="javascript:void(0);"><em class="litb-icon-flag by"></em><span class="english" data-abbr="by">Belarus</span><span class="chinese">白俄罗斯</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;be&quot;}" href="javascript:void(0);"><em class="litb-icon-flag be"></em><span class="english" data-abbr="be">Belgium</span><span class="chinese">比利时</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;bz&quot;}" href="javascript:void(0);"><em class="litb-icon-flag bz"></em><span class="english" data-abbr="bz">Belize</span><span class="chinese">伯利兹</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;bj&quot;}" href="javascript:void(0);"><em class="litb-icon-flag bj"></em><span class="english" data-abbr="bj">Benin</span><span class="chinese">贝宁</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;bm&quot;}" href="javascript:void(0);"><em class="litb-icon-flag bm"></em><span class="english" data-abbr="bm">Bermuda</span><span class="chinese">百慕大</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;bt&quot;}" href="javascript:void(0);"><em class="litb-icon-flag bt"></em><span class="english" data-abbr="bt">Bhutan</span><span class="chinese">不丹</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;bo&quot;}" href="javascript:void(0);"><em class="litb-icon-flag bo"></em><span class="english" data-abbr="bo">Bolivia</span><span class="chinese">玻利维亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ba&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ba"></em><span class="english" data-abbr="ba">Bosnia and Herzegowina</span><span class="chinese">波黑</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;bw&quot;}" href="javascript:void(0);"><em class="litb-icon-flag bw"></em><span class="english" data-abbr="bw">Botswana</span><span class="chinese">博茨瓦纳</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;br&quot;}" href="javascript:void(0);"><em class="litb-icon-flag br"></em><span class="english" data-abbr="br">Brazil</span><span class="chinese">巴西</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;io&quot;}" href="javascript:void(0);"><em class="litb-icon-flag io"></em><span class="english" data-abbr="io">British Indian Ocean Territory</span><span class="chinese">英属印度洋领地</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;bn&quot;}" href="javascript:void(0);"><em class="litb-icon-flag bn"></em><span class="english" data-abbr="bn">Brunei Darussalam</span><span class="chinese">文莱</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;bg&quot;}" href="javascript:void(0);"><em class="litb-icon-flag bg"></em><span class="english" data-abbr="bg">Bulgaria</span><span class="chinese">保加利亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;bf&quot;}" href="javascript:void(0);"><em class="litb-icon-flag bf"></em><span class="english" data-abbr="bf">Burkina Faso</span><span class="chinese">布基纳法索</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;bi&quot;}" href="javascript:void(0);"><em class="litb-icon-flag bi"></em><span class="english" data-abbr="bi">Burundi</span><span class="chinese">布隆迪</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;kh&quot;}" href="javascript:void(0);"><em class="litb-icon-flag kh"></em><span class="english" data-abbr="kh">Cambodia</span><span class="chinese">柬埔寨</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;cm&quot;}" href="javascript:void(0);"><em class="litb-icon-flag cm"></em><span class="english" data-abbr="cm">Cameroon</span><span class="chinese">喀麦隆</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ca&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ca"></em><span class="english" data-abbr="ca">Canada</span><span class="chinese">加拿大</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;cv&quot;}" href="javascript:void(0);"><em class="litb-icon-flag cv"></em><span class="english" data-abbr="cv">Cape Verde</span><span class="chinese">佛得角</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ky&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ky"></em><span class="english" data-abbr="ky">Cayman Islands</span><span class="chinese">开曼群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;cf&quot;}" href="javascript:void(0);"><em class="litb-icon-flag cf"></em><span class="english" data-abbr="cf">Central African Republic</span><span class="chinese">中非</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;td&quot;}" href="javascript:void(0);"><em class="litb-icon-flag td"></em><span class="english" data-abbr="td">Chad</span><span class="chinese">乍得</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;cl&quot;}" href="javascript:void(0);"><em class="litb-icon-flag cl"></em><span class="english" data-abbr="cl">Chile</span><span class="chinese">智利</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;cn&quot;}" href="javascript:void(0);"><em class="litb-icon-flag cn"></em><span class="english" data-abbr="cn">China</span><span class="chinese">中国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;cx&quot;}" href="javascript:void(0);"><em class="litb-icon-flag cx"></em><span class="english" data-abbr="cx">Christmas Island</span><span class="chinese">圣诞岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;cc&quot;}" href="javascript:void(0);"><em class="litb-icon-flag cc"></em><span class="english" data-abbr="cc">Cocos (Keeling) Islands</span><span class="chinese">科科斯群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;co&quot;}" href="javascript:void(0);"><em class="litb-icon-flag co"></em><span class="english" data-abbr="co">Colombia</span><span class="chinese">哥伦比亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;km&quot;}" href="javascript:void(0);"><em class="litb-icon-flag km"></em><span class="english" data-abbr="km">Comoros</span><span class="chinese">科摩罗</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;cg&quot;}" href="javascript:void(0);"><em class="litb-icon-flag cg"></em><span class="english" data-abbr="cg">Congo</span><span class="chinese">刚果</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ck&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ck"></em><span class="english" data-abbr="ck">Cook Islands</span><span class="chinese">库克群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;cr&quot;}" href="javascript:void(0);"><em class="litb-icon-flag cr"></em><span class="english" data-abbr="cr">Costa Rica</span><span class="chinese">哥斯达黎加</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;hr&quot;}" href="javascript:void(0);"><em class="litb-icon-flag hr"></em><span class="english" data-abbr="hr">Croatia</span><span class="chinese">克罗地亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;cu&quot;}" href="javascript:void(0);"><em class="litb-icon-flag cu"></em><span class="english" data-abbr="cu">Cuba</span><span class="chinese">古巴</span><span class="chinese"></span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;cy&quot;}" href="javascript:void(0);"><em class="litb-icon-flag cy"></em><span class="english" data-abbr="cy">Cyprus</span><span class="chinese">塞浦路斯</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;cz&quot;}" href="javascript:void(0);"><em class="litb-icon-flag cz"></em><span class="english" data-abbr="cz">Czech Republic</span><span class="chinese">捷克</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;dk&quot;}" href="javascript:void(0);"><em class="litb-icon-flag dk"></em><span class="english" data-abbr="dk">Denmark </span><span class="chinese">丹麦</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;dj&quot;}" href="javascript:void(0);"><em class="litb-icon-flag dj"></em><span class="english" data-abbr="dj">Djibouti</span><span class="chinese">吉布提</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;dm&quot;}" href="javascript:void(0);"><em class="litb-icon-flag dm"></em><span class="english" data-abbr="dm">Dominica</span><span class="chinese">多米尼克</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;do&quot;}" href="javascript:void(0);"><em class="litb-icon-flag do"></em><span class="english" data-abbr="do">Dominican Republic</span><span class="chinese">多米尼加</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;tp&quot;}" href="javascript:void(0);"><em class="litb-icon-flag tp"></em><span class="english" data-abbr="tp">East Timor</span><span class="chinese">东帝汶</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ec&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ec"></em><span class="english" data-abbr="ec">Ecuador</span><span class="chinese">厄瓜多尔</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;eg&quot;}" href="javascript:void(0);"><em class="litb-icon-flag eg"></em><span class="english" data-abbr="eg">Egypt</span><span class="chinese">北非</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sv&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sv"></em><span class="english" data-abbr="sv">El Salvador</span><span class="chinese">萨尔瓦多</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gq&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gq"></em><span class="english" data-abbr="gq">Equatorial Guinea</span><span class="chinese">赤道几内亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;er&quot;}" href="javascript:void(0);"><em class="litb-icon-flag er"></em><span class="english" data-abbr="er">Eritrea</span><span class="chinese">厄立特里亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ee&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ee"></em><span class="english" data-abbr="ee">Estonia</span><span class="chinese">爱沙尼亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;et&quot;}" href="javascript:void(0);"><em class="litb-icon-flag et"></em><span class="english" data-abbr="et">Ethiopia</span><span class="chinese">埃塞俄比亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;fr&quot;}" href="javascript:void(0);"><em class="litb-icon-flag fr"></em><span class="english" data-abbr="fr">France</span><span class="chinese">法国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;fk&quot;}" href="javascript:void(0);"><em class="litb-icon-flag fk"></em><span class="english" data-abbr="fk">Falkland Islands (Malvinas)</span><span class="chinese">马尔维纳斯群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;fo&quot;}" href="javascript:void(0);"><em class="litb-icon-flag fo"></em><span class="english" data-abbr="fo">Faeroe Islands</span><span class="chinese">法罗群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;fj&quot;}" href="javascript:void(0);"><em class="litb-icon-flag fj"></em><span class="english" data-abbr="fj">Fiji</span><span class="chinese">斐济</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;fi&quot;}" href="javascript:void(0);"><em class="litb-icon-flag fi"></em><span class="english" data-abbr="fi">Finland</span><span class="chinese">芬兰</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;fr&quot;}" href="javascript:void(0);"><em class="litb-icon-flag fr"></em><span class="english" data-abbr="fr">France</span><span class="chinese">法国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gf&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gf"></em><span class="english" data-abbr="gf">French Guiana</span><span class="chinese">法属圭亚那</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;pf&quot;}" href="javascript:void(0);"><em class="litb-icon-flag pf"></em><span class="english" data-abbr="pf">French Polynesia</span><span class="chinese">法属波利尼西亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;tf&quot;}" href="javascript:void(0);"><em class="litb-icon-flag tf"></em><span class="english" data-abbr="tf">French Southern Territories</span><span class="chinese">法国南部领地</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ga&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ga"></em><span class="english" data-abbr="ga">Gabon</span><span class="chinese">加蓬</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gm&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gm"></em><span class="english" data-abbr="gm">Gambia</span><span class="chinese">冈比亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ge&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ge"></em><span class="english" data-abbr="ge">Georgia</span><span class="chinese">格鲁吉亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;de&quot;}" href="javascript:void(0);"><em class="litb-icon-flag de"></em><span class="english" data-abbr="de">Germany</span><span class="chinese">德国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gh&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gh"></em><span class="english" data-abbr="gh">Ghana</span><span class="chinese">加纳</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gi&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gi"></em><span class="english" data-abbr="gi">Gibraltar</span><span class="chinese">直布罗陀</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gr&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gr"></em><span class="english" data-abbr="gr">Greece</span><span class="chinese">南欧</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gl&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gl"></em><span class="english" data-abbr="gl">Greenland</span><span class="chinese">格陵兰岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gd&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gd"></em><span class="english" data-abbr="gd">Grenada</span><span class="chinese">格林纳达</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gp&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gp"></em><span class="english" data-abbr="gp">France, DOM-TOM Guadeloupe</span><span class="chinese">瓜德罗普岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gu&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gu"></em><span class="english" data-abbr="gu">U.S. Guam</span><span class="chinese">大洋洲</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gt&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gt"></em><span class="english" data-abbr="gt">Guatemala</span><span class="chinese">危地马拉</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gn&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gn"></em><span class="english" data-abbr="gn">Guinea</span><span class="chinese">几内亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gw&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gw"></em><span class="english" data-abbr="gw">Guinea-bissau</span><span class="chinese">几内亚比绍</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gy&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gy"></em><span class="english" data-abbr="gy">Guyana</span><span class="chinese">圭亚那</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ht&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ht"></em><span class="english" data-abbr="ht">Haiti</span><span class="chinese">海蒂</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;hn&quot;}" href="javascript:void(0);"><em class="litb-icon-flag hn"></em><span class="english" data-abbr="hn">Honduras</span><span class="chinese">洪都拉斯共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;hk&quot;}" href="javascript:void(0);"><em class="litb-icon-flag hk"></em><span class="english" data-abbr="hk">Hong Kong, China</span><span class="chinese">香港</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;hu&quot;}" href="javascript:void(0);"><em class="litb-icon-flag hu"></em><span class="english" data-abbr="hu">Hungary</span><span class="chinese">匈牙利</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;is&quot;}" href="javascript:void(0);"><em class="litb-icon-flag is"></em><span class="english" data-abbr="is">Iceland</span><span class="chinese">冰岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;in&quot;}" href="javascript:void(0);"><em class="litb-icon-flag in"></em><span class="english" data-abbr="in">India</span><span class="chinese">印度</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;id&quot;}" href="javascript:void(0);"><em class="litb-icon-flag id"></em><span class="english" data-abbr="id">Indonesia</span><span class="chinese">印度尼西亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ir&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ir"></em><span class="english" data-abbr="ir">Iran (Islamic Republic of)</span>伊朗<span class="chinese"></span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;iq&quot;}" href="javascript:void(0);"><em class="litb-icon-flag iq"></em><span class="english" data-abbr="iq">Iraq</span><span class="chinese">伊拉克</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ie&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ie"></em><span class="english" data-abbr="ie">Ireland</span><span class="chinese">爱尔兰</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;il&quot;}" href="javascript:void(0);"><em class="litb-icon-flag il"></em><span class="english" data-abbr="il">Israel</span><span class="chinese">以色列</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;it&quot;}" href="javascript:void(0);"><em class="litb-icon-flag it"></em><span class="english" data-abbr="it">Italy</span><span class="chinese">意大利</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;jm&quot;}" href="javascript:void(0);"><em class="litb-icon-flag jm"></em><span class="english" data-abbr="jm">Jamaica</span><span class="chinese">牙买加</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;jp&quot;}" href="javascript:void(0);"><em class="litb-icon-flag jp"></em><span class="english" data-abbr="jp">Japan</span><span class="chinese">日本</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;jo&quot;}" href="javascript:void(0);"><em class="litb-icon-flag jo"></em><span class="english" data-abbr="jo">Jordan</span><span class="chinese">约旦</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;kz&quot;}" href="javascript:void(0);"><em class="litb-icon-flag kz"></em><span class="english" data-abbr="kz">Kazakhstan</span><span class="chinese">哈萨克斯坦</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ke&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ke"></em><span class="english" data-abbr="ke">Kenya</span><span class="chinese">肯尼亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ki&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ki"></em><span class="english" data-abbr="ki">Kiribati</span><span class="chinese">基里巴斯</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;kp&quot;}" href="javascript:void(0);"><em class="litb-icon-flag kp"></em><span class="english" data-abbr="kp">Korea,D.P.R.K</span><span class="chinese">朝鲜</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;kr&quot;}" href="javascript:void(0);"><em class="litb-icon-flag kr"></em><span class="english" data-abbr="kr">Korea, Republic of</span><span class="chinese">韩国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;kw&quot;}" href="javascript:void(0);"><em class="litb-icon-flag kw"></em><span class="english" data-abbr="kw">Kuwait</span><span class="chinese">科威特</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;kg&quot;}" href="javascript:void(0);"><em class="litb-icon-flag kg"></em><span class="english" data-abbr="kg">Kyrgyzstan</span><span class="chinese">吉尔吉斯斯坦</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;lv&quot;}" href="javascript:void(0);"><em class="litb-icon-flag lv"></em><span class="english" data-abbr="lv">Latvia</span><span class="chinese">拉脱维亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;lb&quot;}" href="javascript:void(0);"><em class="litb-icon-flag lb"></em><span class="english" data-abbr="lb">Lebanon</span><span class="chinese">黎巴嫩</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ls&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ls"></em><span class="english" data-abbr="ls">Lesotho</span><span class="chinese">莱索托王国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;lr&quot;}" href="javascript:void(0);"><em class="litb-icon-flag lr"></em><span class="english" data-abbr="lr">Liberia</span><span class="chinese">利比里亚共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ly&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ly"></em><span class="english" data-abbr="ly">Libyan Arab Jamahiriya</span><span class="chinese">阿拉伯利比亚民众国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;li&quot;}" href="javascript:void(0);"><em class="litb-icon-flag li"></em><span class="english" data-abbr="li">Liechtenstein</span><span class="chinese">列支敦士登</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;lt&quot;}" href="javascript:void(0);"><em class="litb-icon-flag lt"></em><span class="english" data-abbr="lt">Lithuania</span><span class="chinese">立陶宛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;lu&quot;}" href="javascript:void(0);"><em class="litb-icon-flag lu"></em><span class="english" data-abbr="lu">Luxembourg</span><span class="chinese">卢森堡</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mo&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mo"></em><span class="english" data-abbr="mo">Macau, China</span><span class="chinese">澳门</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;my&quot;}" href="javascript:void(0);"><em class="litb-icon-flag my"></em><span class="english" data-abbr="my">Malaysia</span><span class="chinese">马来西亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mk&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mk"></em><span class="english" data-abbr="mk">Macedonia,F.Y.R.O.M</span><span class="chinese">马其顿，前南斯拉夫共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mg&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mg"></em><span class="english" data-abbr="mg">Madagascar</span><span class="chinese">马达加斯加岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mw&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mw"></em><span class="english" data-abbr="mw">Malawi</span><span class="chinese">马拉维</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mv&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mv"></em><span class="english" data-abbr="mv">Maldives</span><span class="chinese">马尔代夫</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ml&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ml"></em><span class="english" data-abbr="ml">Mali</span><span class="chinese">西非</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mt&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mt"></em><span class="english" data-abbr="mt">Malta</span><span class="chinese">马耳他</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mh&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mh"></em><span class="english" data-abbr="mh">Marshall Islands</span><span class="chinese">马绍尔群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mq&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mq"></em><span class="english" data-abbr="mq">France, DOM-TOM Martinique</span><span class="chinese">马提尼克岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mr&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mr"></em><span class="english" data-abbr="mr">Mauritania</span><span class="chinese">毛里塔尼亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mu&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mu"></em><span class="english" data-abbr="mu">Mauritius</span><span class="chinese">毛里求斯</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;yt&quot;}" href="javascript:void(0);"><em class="litb-icon-flag yt"></em><span class="english" data-abbr="yt">France, DOM-TOM Mayotte</span><span class="chinese">马约特岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mx&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mx"></em><span class="english" data-abbr="mx">Mexico</span><span class="chinese">墨西哥</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;fm&quot;}" href="javascript:void(0);"><em class="litb-icon-flag fm"></em><span class="english" data-abbr="fm">Micronesia, Federated States of</span><span class="chinese">密克罗尼西亚联邦</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;md&quot;}" href="javascript:void(0);"><em class="litb-icon-flag md"></em><span class="english" data-abbr="md">Moldova, Republic of</span><span class="chinese">摩尔多瓦共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mc&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mc"></em><span class="english" data-abbr="mc">Monaco</span><span class="chinese">摩纳哥公国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mn&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mn"></em><span class="english" data-abbr="mn">Mongolia</span><span class="chinese">蒙古</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ms&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ms"></em><span class="english" data-abbr="ms">Montserrat</span><span class="chinese">黑山共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ma&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ma"></em><span class="english" data-abbr="ma">Morocco</span><span class="chinese">摩洛哥</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mz&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mz"></em><span class="english" data-abbr="mz">Mozambique</span><span class="chinese">莫桑比克共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mm&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mm"></em><span class="english" data-abbr="mm">Myanmar</span><span class="chinese">缅甸</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;na&quot;}" href="javascript:void(0);"><em class="litb-icon-flag na"></em><span class="english" data-abbr="na">Namibia</span><span class="chinese">纳米比亚共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;nr&quot;}" href="javascript:void(0);"><em class="litb-icon-flag nr"></em><span class="english" data-abbr="nr">Nauru</span><span class="chinese">瑙鲁</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;np&quot;}" href="javascript:void(0);"><em class="litb-icon-flag np"></em><span class="english" data-abbr="np">Nepal</span><span class="chinese">尼泊尔</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;nl&quot;}" href="javascript:void(0);"><em class="litb-icon-flag nl"></em><span class="english" data-abbr="nl">Netherlands</span><span class="chinese">荷兰</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;an&quot;}" href="javascript:void(0);"><em class="litb-icon-flag an"></em><span class="english" data-abbr="an">Netherlands Antilles</span><span class="chinese">荷属安的列斯群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;nc&quot;}" href="javascript:void(0);"><em class="litb-icon-flag nc"></em><span class="english" data-abbr="nc">France, DOM-TOM New Caledonia</span><span class="chinese">新喀里多尼亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;nz&quot;}" href="javascript:void(0);"><em class="litb-icon-flag nz"></em><span class="english" data-abbr="nz">New Zealand</span><span class="chinese">新西兰</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ni&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ni"></em><span class="english" data-abbr="ni">Nicaragua</span><span class="chinese">尼加拉瓜</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ne&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ne"></em><span class="english" data-abbr="ne">Niger</span><span class="chinese">尼日尔</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ng&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ng"></em><span class="english" data-abbr="ng">Nigeria</span><span class="chinese">尼日利亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;nu&quot;}" href="javascript:void(0);"><em class="litb-icon-flag nu"></em><span class="english" data-abbr="nu">Niue</span><span class="chinese">纽埃</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;nf&quot;}" href="javascript:void(0);"><em class="litb-icon-flag nf"></em><span class="english" data-abbr="nf">Norfolk Island</span><span class="chinese">诺福克岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mp&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mp"></em><span class="english" data-abbr="mp">Northern Mariana Islands</span><span class="chinese">北马里亚那群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;no&quot;}" href="javascript:void(0);"><em class="litb-icon-flag no"></em><span class="english" data-abbr="no">Norway</span><span class="chinese">挪威</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;om&quot;}" href="javascript:void(0);"><em class="litb-icon-flag om"></em><span class="english" data-abbr="om">Oman</span><span class="chinese">阿曼</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;pk&quot;}" href="javascript:void(0);"><em class="litb-icon-flag pk"></em><span class="english" data-abbr="pk">Pakistan</span><span class="chinese">巴基斯坦</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;pw&quot;}" href="javascript:void(0);"><em class="litb-icon-flag pw"></em><span class="english" data-abbr="pw">Palau</span><span class="chinese">帕劳共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;pa&quot;}" href="javascript:void(0);"><em class="litb-icon-flag pa"></em><span class="english" data-abbr="pa">Panama</span><span class="chinese">巴拿马</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;pg&quot;}" href="javascript:void(0);"><em class="litb-icon-flag pg"></em><span class="english" data-abbr="pg">Papua New Guinea</span><span class="chinese">巴布亚新几内亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;py&quot;}" href="javascript:void(0);"><em class="litb-icon-flag py"></em><span class="english" data-abbr="py">Paraguay</span><span class="chinese">巴拉圭</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;pe&quot;}" href="javascript:void(0);"><em class="litb-icon-flag pe"></em><span class="english" data-abbr="pe">Peru</span><span class="chinese">秘鲁</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ph&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ph"></em><span class="english" data-abbr="ph">Philippines</span><span class="chinese">菲律宾</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;pn&quot;}" href="javascript:void(0);"><em class="litb-icon-flag pn"></em><span class="english" data-abbr="pn">Pitcairn</span><span class="chinese">皮特凯恩群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;pl&quot;}" href="javascript:void(0);"><em class="litb-icon-flag pl"></em><span class="english" data-abbr="pl">Poland</span><span class="chinese">波兰</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;pt&quot;}" href="javascript:void(0);"><em class="litb-icon-flag pt"></em><span class="english" data-abbr="pt">Portugal</span><span class="chinese">葡萄牙</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;pr&quot;}" href="javascript:void(0);"><em class="litb-icon-flag pr"></em><span class="english" data-abbr="pr">Puerto Rico</span><span class="chinese">波多黎各</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;qa&quot;}" href="javascript:void(0);"><em class="litb-icon-flag qa"></em><span class="english" data-abbr="qa">Qatar</span><span class="chinese">卡塔尔</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;re&quot;}" href="javascript:void(0);"><em class="litb-icon-flag re"></em><span class="english" data-abbr="re">France, DOM-TOM Réunion</span><span class="chinese">留尼旺岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ro&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ro"></em><span class="english" data-abbr="ro">Romania</span><span class="chinese">罗马尼亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ru&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ru"></em><span class="english" data-abbr="ru">Russian Federation</span><span class="chinese">俄罗斯</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;rw&quot;}" href="javascript:void(0);"><em class="litb-icon-flag rw"></em><span class="english" data-abbr="rw">Rwanda</span><span class="chinese">卢旺达</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;kn&quot;}" href="javascript:void(0);"><em class="litb-icon-flag kn"></em><span class="english" data-abbr="kn">Saint Kitts and Nevis</span><span class="chinese">圣基茨和尼维斯联邦</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;lc&quot;}" href="javascript:void(0);"><em class="litb-icon-flag lc"></em><span class="english" data-abbr="lc">Saint Lucia</span><span class="chinese">圣卢西亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;vc&quot;}" href="javascript:void(0);"><em class="litb-icon-flag vc"></em><span class="english" data-abbr="vc">Saint Vincent and the Grenadines</span><span class="chinese">圣文森特和格林纳丁斯</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ws&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ws"></em><span class="english" data-abbr="ws">Samoa</span><span class="chinese">萨摩亚群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sm&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sm"></em><span class="english" data-abbr="sm">San Marino</span><span class="chinese">圣马力诺共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;st&quot;}" href="javascript:void(0);"><em class="litb-icon-flag st"></em><span class="english" data-abbr="st">Sao Tome and Principe</span><span class="chinese">圣多美和普林西比</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sa&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sa"></em><span class="english" data-abbr="sa">Saudi Arabia</span><span class="chinese">沙特阿拉伯</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sn&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sn"></em><span class="english" data-abbr="sn">Senegal</span><span class="chinese">塞内加尔</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sc&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sc"></em><span class="english" data-abbr="sc">Seychelles</span><span class="chinese">东非</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sl&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sl"></em><span class="english" data-abbr="sl">Sierra Leone</span><span class="chinese">塞拉利昂</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sg&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sg"></em><span class="english" data-abbr="sg">Singapore</span><span class="chinese">新加坡</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sk&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sk"></em><span class="english" data-abbr="sk">Slovakia (Slovak Republic)</span><span class="chinese">斯洛伐克</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;si&quot;}" href="javascript:void(0);"><em class="litb-icon-flag si"></em><span class="english" data-abbr="si">Slovenia</span><span class="chinese">斯洛文尼亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sb&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sb"></em><span class="english" data-abbr="sb">Solomon Islands</span><span class="chinese">所罗门群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;so&quot;}" href="javascript:void(0);"><em class="litb-icon-flag so"></em><span class="english" data-abbr="so">Somalia</span><span class="chinese">索马里联邦共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;za&quot;}" href="javascript:void(0);"><em class="litb-icon-flag za"></em><span class="english" data-abbr="za">South Africa</span><span class="chinese">南非</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;es&quot;}" href="javascript:void(0);"><em class="litb-icon-flag es"></em><span class="english" data-abbr="es">Spain</span><span class="chinese">西班牙</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;lk&quot;}" href="javascript:void(0);"><em class="litb-icon-flag lk"></em><span class="english" data-abbr="lk">Sri Lanka</span><span class="chinese">斯里兰卡</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sh&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sh"></em><span class="english" data-abbr="sh">St. Helena</span><span class="chinese">圣巴泰勒米</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sd&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sd"></em><span class="english" data-abbr="sd">Sudan</span><span class="chinese">苏丹</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sr&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sr"></em><span class="english" data-abbr="sr">Suriname</span><span class="chinese">苏里南</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sj&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sj"></em><span class="english" data-abbr="sj">Svalbard and Jan Mayen Islands</span><span class="chinese">斯瓦尔巴群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sz&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sz"></em><span class="english" data-abbr="sz">Swaziland</span><span class="chinese">斯威士兰</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;se&quot;}" href="javascript:void(0);"><em class="litb-icon-flag se"></em><span class="english" data-abbr="se">Sweden</span><span class="chinese">瑞典</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ch&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ch"></em><span class="english" data-abbr="ch">Switzerland</span><span class="chinese">瑞士</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;sy&quot;}" href="javascript:void(0);"><em class="litb-icon-flag sy"></em><span class="english" data-abbr="sy">Syrian Arab Republic</span><span class="chinese">叙利亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;tw&quot;}" href="javascript:void(0);"><em class="litb-icon-flag tw"></em><span class="english" data-abbr="tw">Taiwan, China</span><span class="chinese">台湾</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;tj&quot;}" href="javascript:void(0);"><em class="litb-icon-flag tj"></em><span class="english" data-abbr="tj">Tajikistan</span><span class="chinese">塔吉克斯坦</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;tz&quot;}" href="javascript:void(0);"><em class="litb-icon-flag tz"></em><span class="english" data-abbr="tz">Tanzania, United Republic of</span><span class="chinese">塔桑尼亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;th&quot;}" href="javascript:void(0);"><em class="litb-icon-flag th"></em><span class="english" data-abbr="th">Thailand</span><span class="chinese">泰国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;tg&quot;}" href="javascript:void(0);"><em class="litb-icon-flag tg"></em><span class="english" data-abbr="tg">Togo</span><span class="chinese">多哥</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;tk&quot;}" href="javascript:void(0);"><em class="litb-icon-flag tk"></em><span class="english" data-abbr="tk">Tokelau</span><span class="chinese">托克劳</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;to&quot;}" href="javascript:void(0);"><em class="litb-icon-flag to"></em><span class="english" data-abbr="to">Tonga</span><span class="chinese">汤加</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;tt&quot;}" href="javascript:void(0);"><em class="litb-icon-flag tt"></em><span class="english" data-abbr="tt">Trinidad and Tobago</span><span class="chinese">特立尼达和多巴哥共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;tn&quot;}" href="javascript:void(0);"><em class="litb-icon-flag tn"></em><span class="english" data-abbr="tn">Tunisia</span><span class="chinese">突尼斯</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;tr&quot;}" href="javascript:void(0);"><em class="litb-icon-flag tr"></em><span class="english" data-abbr="tr">Turkey</span><span class="chinese">土耳其</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;tm&quot;}" href="javascript:void(0);"><em class="litb-icon-flag tm"></em><span class="english" data-abbr="tm">Turkmenistan</span><span class="chinese">土库曼斯坦</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;tc&quot;}" href="javascript:void(0);"><em class="litb-icon-flag tc"></em><span class="english" data-abbr="tc">Turks and Caicos Islands</span><span class="chinese">特克斯群岛和凯科斯群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;tv&quot;}" href="javascript:void(0);"><em class="litb-icon-flag tv"></em><span class="english" data-abbr="tv">Tuvalu</span><span class="chinese">图瓦卢</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ug&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ug"></em><span class="english" data-abbr="ug">Uganda</span><span class="chinese">乌干达</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ua&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ua"></em><span class="english" data-abbr="ua">Ukraine</span><span class="chinese">乌克兰</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ae&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ae"></em><span class="english" data-abbr="ae">United Arab Emirates</span><span class="chinese">阿拉伯联合酋长国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gb&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gb"></em><span class="english" data-abbr="gb">United Kingdom</span><span class="chinese">英国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;us&quot;}" href="javascript:void(0);"><em class="litb-icon-flag us"></em><span class="english" data-abbr="us">United States</span><span class="chinese">美国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;uy&quot;}" href="javascript:void(0);"><em class="litb-icon-flag uy"></em><span class="english" data-abbr="uy">Uruguay</span><span class="chinese">乌拉圭</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;uz&quot;}" href="javascript:void(0);"><em class="litb-icon-flag uz"></em><span class="english" data-abbr="uz">Uzbekistan</span><span class="chinese">乌兹别克斯坦</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;vu&quot;}" href="javascript:void(0);"><em class="litb-icon-flag vu"></em><span class="english" data-abbr="vu">Vanuatu</span><span class="chinese">瓦努阿图</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;va&quot;}" href="javascript:void(0);"><em class="litb-icon-flag va"></em><span class="english" data-abbr="va">Vatican City State (Holy See)</span><span class="chinese">梵蒂冈</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ve&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ve"></em><span class="english" data-abbr="ve">Venezuela</span><span class="chinese">委内瑞拉</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;vn&quot;}" href="javascript:void(0);"><em class="litb-icon-flag vn"></em><span class="english" data-abbr="vn">Vietnam</span><span class="chinese">越南</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;vg&quot;}" href="javascript:void(0);"><em class="litb-icon-flag vg"></em><span class="english" data-abbr="vg">Virgin Islands (British)</span><span class="chinese">维尔京群岛，英国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;vi&quot;}" href="javascript:void(0);"><em class="litb-icon-flag vi"></em><span class="english" data-abbr="vi">Virgin Islands (U.S.)</span><span class="chinese">维尔京群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;wf&quot;}" href="javascript:void(0);"><em class="litb-icon-flag wf"></em><span class="english" data-abbr="wf">France, DOM-TOM Wallis and Futuna</span><span class="chinese">瓦利斯与富图纳</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;eh&quot;}" href="javascript:void(0);"><em class="litb-icon-flag eh"></em><span class="english" data-abbr="eh">Western Sahara</span><span class="chinese">西撒哈拉</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ye&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ye"></em><span class="english" data-abbr="ye">Yemen</span><span class="chinese">也门</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;zm&quot;}" href="javascript:void(0);"><em class="litb-icon-flag zm"></em><span class="english" data-abbr="zm">Zambia</span><span class="chinese">赞比亚</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;zw&quot;}" href="javascript:void(0);"><em class="litb-icon-flag zw"></em><span class="english" data-abbr="zw">Zimbabwe</span><span class="chinese">津巴布韦</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;je&quot;}" href="javascript:void(0);"><em class="litb-icon-flag je"></em><span class="english" data-abbr="je">Jersey</span><span class="chinese">泽西岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;rs&quot;}" href="javascript:void(0);"><em class="litb-icon-flag rs"></em><span class="english" data-abbr="rs">Serbia republic of</span><span class="chinese">塞尔维亚共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;me&quot;}" href="javascript:void(0);"><em class="litb-icon-flag me"></em><span class="english" data-abbr="me">Montenegro</span><span class="chinese">黑山共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;ic&quot;}" href="javascript:void(0);"><em class="litb-icon-flag ic"></em><span class="english" data-abbr="ic">Canary Islands</span><span class="chinese">加那利群岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;cd&quot;}" href="javascript:void(0);"><em class="litb-icon-flag cd"></em><span class="english" data-abbr="cd">Congo, The Democratic Republic</span><span class="chinese">刚果民主主义</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;gg&quot;}" href="javascript:void(0);"><em class="litb-icon-flag gg"></em><span class="english" data-abbr="gg">Guernsey</span><span class="chinese">格恩西岛</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;xs&quot;}" href="javascript:void(0);"><em class="litb-icon-flag xs"></em><span class="english" data-abbr="xs">Somaliland, Republic of</span><span class="chinese">索马里兰共和国</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;xy&quot;}" href="javascript:void(0);"><em class="litb-icon-flag xy"></em><span class="english" data-abbr="xy">St Barthelemy</span><span class="chinese">圣巴泰勒米</span></a></li>
+                                    <li><a ctr="{&quot;change_to_country&quot;:&quot;mf&quot;}" href="javascript:void(0);"><em class="litb-icon-flag mf"></em><span class="english" data-abbr="mf">France, DOM-TOM Saint-Martin</span><span class="chinese">圣马丁</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="no-result" style="display: none;">No result match""</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top2015-1-right">
+            <div class="topbtn-2"><a rel="nofollow" href="/?act=service_online">关于我们</a></div>
+            <div class="topbtn-2"><a rel="nofollow" href="/help.html">帮助中心</a></div>
+            <div class="topbtn-2"><a rel="nofollow" href="/?act=service_online">设为首页</a></div>
+            <div class="topbtn-2"><a rel="nofollow" href="/?act=myAccount">我的账户</a></div>
+        </div>
+    </div>
+</div>
+
+<div class="right_sidebar">
+    <div class="cebianbox-1" style="right: 0px; top: 0px; position: fixed;">
+        <table style=" position:fixed; bottom:0;z-index:99 " height="100%" border="0" cellpadding="0" cellspacing="0" width="36">
+            <tbody>
+                <tr>
+                    <td id="sidebar-nav" bgcolor="#333">
+                        <div style="margin-top: 96.25px;" class="conbox1121-1">
+                            <!--我的账户-->
+                            <div class="special_nav_menu">
+                                <div href="javascript:void(0)" class="btncb-1_off" onmouseover="this.className='btncb-1_on';" onmouseout="this.className='btncb-1_off';">
+                                    <div style="display: none;" class="mouseover1121-box1">
+                                        <div class="close">
+                                            <a rel="nofollow" href="javascript:void(0);" onclick="$(this).parent().parent().hide();"><img src="Images/sidebar/close1121-1.jpg" height="12" width="12"></a>
+                                        </div>
+                                        <div class="hy-touxiang">
+                                            <a rel="nofollow" href="/?act=myAccount" target="_blank"><img src="Images/sidebar/noface.gif" style="-webkit-border-radius:90px;border-radius:90px;" border="0" width="100%"></a>
+                                        </div>
+                                        <!--登录前-->
+                                        <div class="denglu-box1121-1">Hi，请先 <a rel="nofollow" href="/?act=login" target="_blank" style="text-decoration:none; color:#ff6600;">登录 </a>或 <a rel="nofollow" href="/?act=register" target="_blank" style="text-decoration:none; color:#ff6600;">注册</a> 哦！</div>
+                                        <div class="clear"></div>
+                                        <div class="sancaidanbox">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="240" align="center">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style=" border-right:1px #e5e5e5 solid;" height="80" valign="top" align="center">
+                                                            <div class="btn1121-lb1"><a rel="nofollow" href="/myAccount.php?act=order&amp;s=0" target="_blank">我的订单</a></div>
+                                                        </td>
+                                                        <td style=" border-right:1px #e5e5e5 solid;" valign="top" align="center">
+                                                            <div class="btn1121-lb2"><a rel="nofollow" href="/myAccount.php?act=parcel" target="_blank">我的包裹</a></div>
+                                                        </td>
+                                                        <td valign="top" align="center">
+                                                            <div class="btn1121-lb3"><a rel="nofollow" href="/myAccount.php?act=myConsultations" target="_blank">我的咨询</a></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--我收藏的商品-->
+                            <div class="nav_menu">
+                                <a rel="nofollow" href="/myAccount.php?act=collect" target="_blank" class="btncb-2_off" onmouseover="this.className='btncb-2_on';" onmouseout="this.className='btncb-2_off';">
+                                    <div style="display: none; right: 60px;" class="mouseover1125-box4">我收藏的商品</div>
+                                </a>
+                            </div>
+                            <!--我要充值-->
+                            <div class="nav_menu">
+                                <a rel="nofollow" href="/user/pay" target="_blank" class="btncb-3_off" onmouseover="this.className='btncb-3_on';" onmouseout="this.className='btncb-3_off';">
+                                    <div style="display: none; right: 60px;" class="mouseover1125-box4">我要充值</div>
+                                </a>
+                            </div>
+                            <!--购物车-->
+                            <div class="special_nav_menu">
+                                <div rel="nofollow" href="/?act=cart" style="text-decoration: none; color: white;" target="_blank" class="btncb-4_off" onmouseover="this.className='btncb-4_on';$(this).css('color','#ff9900');" onmouseout="this.className='btncb-4_off';$(this).css('color','white');">0
+                                    
+                                    <div style="display: none;" class="menu-bd">
+                                        <div class="menu-bd-panel mini-cart-ready">
+                                            <div class="mini-cart-hd"><strong>最近加入的宝贝：</strong></div>
+                                            <ul style="" class="mini-cart-bd">
+                                                <li data-cartid="104608772123">
+                                                    <div class="mini-cart-img">
+                                                        <a data-spm-anchor-id="2013.1.1997525049.2" target="_top" href="http://item.taobao.com/item.htm?spm=2013.1.1997525049.2.bndnxj&amp;id=14308114861"><img src="http://img.taobaocdn.com/bao/uploaded/i2/T1fqeQXi8qXXXvcO.7_065216.jpg_40x40.jpg" alt="苏泊尔电压力锅原装配件 锅盖密封圈 皮碗 皮圈 胶圈 正品4 5 6 L"></a>
+                                                    </div>
+                                                    <div class="mini-cart-count">¥<strong class="mini-cart-price h">3.00</strong></div>
+                                                    <div class="mini-cart-title"><a data-spm-anchor-id="2013.1.1997525049.3" style="width: 170px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" target="_top" href="http://item.taobao.com/item.htm?spm=2013.1.1997525049.3.bndnxj&amp;id=14308114861" title="苏泊尔电压力锅原装配件 锅盖密封圈 皮碗 皮圈 胶圈 正品4 5 6 L">苏泊尔电压力锅原装配件 锅盖密封圈 皮碗 皮圈 胶圈 正品4 5 6 L</a></div>
+                                                    <div class="mini-cart-del"><a data-spm-anchor-id="2013.1.1997525049.4" href="#">删除</a></div>
+                                                </li>
+                                                <li data-cartid="104608328952">
+                                                    <div class="mini-cart-img">
+                                                        <a data-spm-anchor-id="2013.1.1997525049.5" target="_top" href="http://item.taobao.com/item.htm?spm=2013.1.1997525049.5.bndnxj&amp;id=17297301572"><img src="http://img.taobaocdn.com/bao/uploaded/i4/12690019737607206/T1DyxnXEhhXXXXXXXX_!!0-item_pic.jpg_40x40.jpg" alt="原厂配件 苏泊尔电压力锅密封圈+可拆卸PC材质密封固定圈4L/5L/6L"></a>
+                                                    </div>
+                                                    <div class="mini-cart-count">¥<strong class="mini-cart-price h">20.00</strong></div>
+                                                    <div class="mini-cart-title"><a data-spm-anchor-id="2013.1.1997525049.6" style="width: 162px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" target="_top" href="http://item.taobao.com/item.htm?spm=2013.1.1997525049.6.bndnxj&amp;id=17297301572" title="原厂配件 苏泊尔电压力锅密封圈+可拆卸PC材质密封固定圈4L/5L/6L">原厂配件 苏泊尔电压力锅密封圈+可拆卸PC材质密封固定圈4L/5L/6L</a></div>
+                                                    <div class="mini-cart-del"><a data-spm-anchor-id="2013.1.1997525049.7" href="#">删除</a></div>
+                                                </li>
+                                                <li data-cartid="104741455757">
+                                                    <div class="mini-cart-img">
+                                                        <a data-spm-anchor-id="2013.1.1997525049.8" target="_top" href="http://item.taobao.com/item.htm?spm=2013.1.1997525049.8.bndnxj&amp;id=35469754927"><img src="http://img.taobaocdn.com/bao/uploaded/i4/14350029471773130/T1DyxnXEhhXXXXXXXX_!!0-item_pic.jpg_40x40.jpg" alt="原厂配件 苏泊尔电压力锅密封圈+可拆卸PC材质密封固定圈4L/5L/6L"></a>
+                                                    </div>
+                                                    <div class="mini-cart-count">¥<strong class="mini-cart-price h">15.00</strong></div>
+                                                    <div class="mini-cart-title"><a data-spm-anchor-id="2013.1.1997525049.9" style="width: 162px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" target="_top" href="http://item.taobao.com/item.htm?spm=2013.1.1997525049.9.bndnxj&amp;id=35469754927" title="原厂配件 苏泊尔电压力锅密封圈+可拆卸PC材质密封固定圈4L/5L/6L">原厂配件 苏泊尔电压力锅密封圈+可拆卸PC材质密封固定圈4L/5L/6L</a></div>
+                                                    <div class="mini-cart-del"><a data-spm-anchor-id="2013.1.1997525049.10" href="#">删除</a></div>
+                                                </li>
+                                                <li data-cartid="104608376521">
+                                                    <div class="mini-cart-img">
+                                                        <a data-spm-anchor-id="2013.1.1997525049.11" target="_top" href="http://item.taobao.com/item.htm?spm=2013.1.1997525049.11.bndnxj&amp;id=16022297558"><img src="http://img.taobaocdn.com/bao/uploaded/i1/T10BHQXmRbXXc3dW2c_125759.jpg_40x40.jpg" alt="苏泊尔电压力锅 上盖口杯胶 胶杯 胶圈"></a>
+                                                    </div>
+                                                    <div class="mini-cart-count">¥<strong class="mini-cart-price h">1.00</strong></div>
+                                                    <div class="mini-cart-title"><a data-spm-anchor-id="2013.1.1997525049.12" style="width: 170px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" target="_top" href="http://item.taobao.com/item.htm?spm=2013.1.1997525049.12.bndnxj&amp;id=16022297558" title="苏泊尔电压力锅 上盖口杯胶 胶杯 胶圈">苏泊尔电压力锅 上盖口杯胶 胶杯 胶圈</a></div>
+                                                    <div class="mini-cart-del"><a data-spm-anchor-id="2013.1.1997525049.13" href="#">删除</a></div>
+                                                </li>
+                                                <li data-cartid="104842350264">
+                                                    <div class="mini-cart-img">
+                                                        <a data-spm-anchor-id="2013.1.1997525049.14" target="_top" href="http://item.taobao.com/item.htm?spm=2013.1.1997525049.14.bndnxj&amp;id=19349510742"><img src="http://img.taobaocdn.com/bao/uploaded/i2/14350025496401542/T17sGDXDldXXXXXXXX_!!0-item_pic.jpg_40x40.jpg" alt="苏泊尔电压力锅配件4、5、6L 支架 密封固定圈 塑料架"></a>
+                                                    </div>
+                                                    <div class="mini-cart-count">¥<strong class="mini-cart-price h">6.00</strong></div>
+                                                    <div class="mini-cart-title"><a data-spm-anchor-id="2013.1.1997525049.15" style="width: 170px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" target="_top" href="http://item.taobao.com/item.htm?spm=2013.1.1997525049.15.bndnxj&amp;id=19349510742" title="苏泊尔电压力锅配件4、5、6L 支架 密封固定圈 塑料架">苏泊尔电压力锅配件4、5、6L 支架 密封固定圈 塑料架</a></div>
+                                                    <div class="mini-cart-del"><a data-spm-anchor-id="2013.1.1997525049.16" href="#">删除</a></div>
+                                                </li>
+                                            </ul>
+                                            <div class="mini-cart-ft">
+                                                <p><strong>购物车里还有1件宝贝</strong></p>
+                                            </div>
+                                            <div class="mini-cart-ft">
+                                                <p><a data-spm-anchor-id="2013.1.1997525049.17" target="_top" href="#" class="site-nav-btn">查看我的购物车</a></p>
+                                            </div>
+                                        </div>
+                                        <div style="width:0;height:0;float:none;clear:both;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--新手指南-->
+                            <div class="nav_menu">
+                                <a rel="nofollow" href="/daigoudemo" target="_blank" class="btncb-5_off" onmouseover="this.className='btncb-5_on';" onmouseout="this.className='btncb-5_off';">
+                                    <div style="display: none; right: 60px;" class="mouseover1125-box4">新手帮助指南</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="conbox1121-2">
+                            <!--客服中心-->
+                            <div class="nav_menu">
+                                <a rel="nofollow" href="/?act=service_online" target="_blank" class="btncb-6_off" onmouseover="this.className='btncb-6_on';" onmouseout="this.className='btncb-6_off';">
+                                    <div style="display: none; right: 60px;" class="mouseover1125-box4">客服中心</div>
+                                </a>
+                            </div>
+                            <!--facebook-->
+                            <div class="nav_menu">
+                                <a rel="nofollow" href="http://www.facebook.com/pages/%E4%BB%A3%E8%B4%AD%E4%B8%AD%E5%9B%BD/194211270643781" target="_blank" class="btncb-7_off" onmouseover="this.className='btncb-7_on';" onmouseout="this.className='btncb-7_off';">
+                                    <div style="display: none; right: 60px;" class="mouseover1125-box4">86代购Facebook</div>
+                                </a>
+                            </div>
+                            <!--微信-->
+                            <div class="special_nav_menu">
+                                <a rel="nofollow" href="javascript:void(0)" class="btncb-8_off" onmouseover="this.className='btncb-8_on';" onmouseout="this.className='btncb-8_off';">
+                                    <div style="display: none;" class="mouseover1121-box3"><img src="Images/sidebar/weixintu1121.png" height="116" width="91"></div>
+                                </a>
+                            </div>
+                            <!--返回顶部-->
+                            <div class="nav_menu">
+                                <a style="visibility: hidden;" rel="nofollow" href="javascript:goTopFun();" id="backtofun" class="btncb-9_off" onmouseover="this.className='btncb-9_on';" onmouseout="this.className='btncb-9_off';">
+                                    <div class="mouseover1125-box4">返回顶部&lt;</div>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="index2015">
+    <div id="index_cover" style="display:none;position:relative;z-index:1;">
+        <div style="position:fixed;top:0;left:0;width:100%;height:100%;opacity:0.5;filter:alpha(opacity=50);background:#ccc;z-index:99;" id="cover_bg"></div>
+        <div style="position:fixed;width: 70%;top: 10%;left: 16%;z-index:100;">
+            <img id="cover_img" src="Images/2/u83.gif"  alt="" style="width:100%;">
+            <div id="cover_btn" style="width: 244px;margin: 0 auto;display:none;">
+                <div id="cover_btn_o" class="cover_btn">再看一遍</div>
+                <div id="cover_btn_x" class="cover_btn">开始代购</div>
+            </div>
+        </div>
+    </div>
+    <div id="index2015_tutorial">
+        <img src="Images/2/u28.png" alt="tutorial" width="210" height="107">
+    </div>
+    <div class="index2015_logo">
+        <img src="Images/2/u2.png" alt="logo" width="315" height="80">
+    </div>
+    <div class="index2015_search">
+        <div class="search2015-textarea1">
+          <form method="post" action="/product" id="search_post" target="_blank">
+            <div class="sel_wrap">
+              <label>商品</label>
+              <select class="select_headsearch" name="" id="search_lassify">
+                  <option value="0">商品</option>
+                  <option value="1">商品1</option>
+                  <option value="2">商品参</option>
+                  <option value="3">商品3</option>
+              </select>
+            </div>
+            <input class="input_headsearch" name="textfield" id="textfield" onfocus="javascript:clear_val();" onblur="javscript:return_val('search');" value="" placeholder="输入商品名称搜索 or 粘贴站外商品URL代购" type="text"> 
+          </form>
+        </div>
+        <div class="search2015_btn1"><a href="javascript:void(0);" onclick="check_url();" rel="nofollow">搜索</a></div>
+        <div style="clear:both;"></div>
+        <div class="search2015_additional">
+            <a href="#">运费查询</a>
+            |
+            <a href="#">寄运限制</a>
+        </div>
+    </div>
+    <div class="index2015_icons">
+        <ul>
+            <a href="#"><li class="icons_1">淘宝</li></a>
+            <a href="#"><li class="icons_2">天猫</li></a>
+            <a href="#"><li class="icons_3">京东</li></a>
+            <a href="#"><li class="icons_4">1号店</li></a>
+            <a href="#"><li class="icons_5">聚美优品</li></a>
+        </ul>
+        <div style="clear:both;"></div>
+        <ul>
+            <a href="#"><li class="icons_6">包裹查询</li></a>
+            <a href="#"><li class="icons_7">运费查询</li></a>
+            <a href="#"><li class="icons_8">用户分享</li></a>
+            <a href="#"><li class="icons_9">国际转运</li></a>
+            <a href="#"><li class="icons_10">更多</li></a>
+        </ul>
+    </div>
+</div>
+
+<script>
+/*<!-- 同步搜索栏下拉框 -->*/
+    $(".sel_wrap").on("change", function() {
+        var o;
+        var opt = $(this).find('option');
+        opt.each(function(i) {
+            if (opt[i].selected == true) {
+                o = opt[i].innerHTML;
+            }
+        })
+        $(this).find('label').html(o);
+    }).trigger('change');
+
+/*<!-- 隐藏显示教程 -->*/
+    $("#index2015_tutorial").on("click",function(){
+        document.getElementById("cover_img").src="Images/2/u83.gif";
+        $("#index_cover").fadeIn();
+        t=setTimeout("showCoverBtn()", 11000 );
+    })
+    $("#cover_bg").on("click",function(){
+        document.getElementById("cover_btn").style.display="none";
+        $("#index_cover").fadeOut();
+        clearTimeout(t);
+    })
+    $("#cover_btn_o").on("click",function(){
+        document.getElementById("cover_img").src="Images/2/u83.gif";
+        $("#index_cover").fadeIn();
+    })
+    $("#cover_btn_x").on("click",function(){
+        document.getElementById("cover_btn").style.display="none";
+        $("#index_cover").fadeOut();
+        clearTimeout(t);
+    })
+    function showCoverBtn(){$("#cover_btn").fadeIn();}
+
+</script>
+
+<script>
+$(".left_menu_list").hover(function() {
+    $(this).children('.con2015-bg-2').show();
+}, function() {
+    $(this).children('.con2015-bg-2').hide();
+});
+
+$("#86_tools").hover(function() {
+    $('.tool20150427-box1').show();
+    //$(this).children('a').attr('class','bar_show');
+}, function() {
+    $('.tool20150427-box1').hide();
+    //$(this).children('a').attr('class','');
+});
+
+$(".country-selector").hover(function() {
+    $(this).children('.dropdown-menu').show();
+    $(this).addClass('open');
+}, function() {
+    $(this).children('.dropdown-menu').hide();
+    $(this).removeClass('open');
+});
+
+$(".country-list").children('ul').children('li').click(function() {
+    var abbr = $(this).children('a').children('.english').attr('data-abbr');
+    var name = $(this).children('a').children('.english').html();
+    $('.curCountry').attr('data-country-name', name);
+    $('.curCountry').html(name);
+    $('.curCountry').attr('data-abbr', abbr);
+    $('.curCountry').siblings('em').attr('class', 'litb-icon-flag ' + abbr);
+    $('.dropdown-menu').hide();
+    $('.country-selector').removeClass("open");
+    var ch_name = $(this).children('a').children('.chinese').html();
+    $('.curCountry_ch').html(ch_name);
+    var position = $(this).parent().parent().parent().attr('position');
+    if (position != 'popup') {
+        record_visit(name, ch_name, abbr, 0);
+    }
+});
+
+function show_countries(val) {
+    var keywords = val.trim().toUpperCase();
+    $(".reco-country-list").children('li').each(function() {
+        var name = $(this).children('a').children('.english').html().toUpperCase();
+        var ch_name = $(this).children('a').children('.chinese').html();
+        if (name.indexOf(keywords) == 0 || ch_name.indexOf(keywords) == 0) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+
+    });
+
+    $(".full-country-list").children('li').each(function() {
+        var name = $(this).children('a').children('.english').html().toUpperCase();
+        var ch_name = $(this).children('a').children('.chinese').html();
+
+        if (name.indexOf(keywords) == 0 || ch_name.indexOf(keywords) == 0) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+
+    });
+
+}
+
+function close_country_popup() {
+    var name = $("#popup_curCountry").html();
+    var abbr = $("#popup_curCountry").attr('data-abbr');
+    var ch_name = $("#popup_curCountry_ch").html();
+    record_visit(name, ch_name, abbr, 1);
+    $('.fcc20150128-box1').hide();
+    $('#zhezhao_bg').hide();
+}
+
+function record_visit(name, ch_name, abbr, is_popup) {
+    $.ajax({
+        type: "post",
+        dataType: "json",
+        url: "/ajax/record_visit",
+        data: "name=" + name + "&abbr=" + abbr + "&ch_name=" + ch_name + "&is_popup=" + is_popup,
+        success: function(data) {},
+        error: function(msg) {}
+    });
+}
+</script>
+<script>
+function AutoResizeImage(maxWidth, maxHeight, objImg) {
+    var img = new Image();
+    img.src = objImg.src;
+    var hRatio;
+    var wRatio;
+    var Ratio = 1;
+    var w = img.width;
+    var h = img.height;
+    wRatio = maxWidth / w;
+    hRatio = maxHeight / h;
+    if (maxWidth == 0 && maxHeight == 0) {
+        Ratio = 1;
+    } else if (maxWidth == 0) {
+        if (hRatio < 1) Ratio = hRatio;
+    } else if (maxHeight == 0) {
+        if (wRatio < 1) Ratio = wRatio;
+    } else if (wRatio < 1 || hRatio < 1) {
+        Ratio = (wRatio <= hRatio ? wRatio : hRatio);
+    }
+    if (Ratio < 1) {
+        w = w * Ratio;
+        h = h * Ratio;
+    }
+    objImg.height = h;
+    objImg.width = w;
+}
+
+
+
+$(".right_menu").click(function() {
+    $(".right_menu").children('a').attr('class', '');
+    $(this).children('a').attr('class', 'selected');
+    var index = $(this).index();
+    $('.QAnr2015-box-1').hide();
+    $('.QAnr2015-box-1').eq(index).show();
+});
+</script>
+<script type="text/javascript">
+var type = '<?php echo $type;?>';
+if (type == 'wide') {
+    var border_width = 1300;
+} else {
+    var border_width = 1100;
+}
+(function() {
+
+    var $backToTopEle = $("#backtofun");
+    $backToTopFun = function() {
+
+        var st = $(document).scrollTop(),
+            winh = $(window).height();
+
+        (st > 500) ? $backToTopEle.css("visibility", "visible"): $backToTopEle.css("visibility", "hidden");
+    };
+
+    $(window).bind("scroll", $backToTopFun);
+
+    $backToTopFun();
+
+})();
+
+function goTopFun() {
+    $("html,body").animate({
+        scrollTop: 0
+    }, 120);
+}
+
+$(".nav_menu").hover(
+    function() {
+        $(this).children().children('div').show();
+        $(this).children().children('div').animate({
+            right: "30px"
+        }, 200);
+    },
+    function() {
+        $(this).children().children('div').animate({
+            right: '60px'
+        }, 200, function() {
+            $(this).hide();
+        });
+    }
+);
+
+$(".special_nav_menu").hover(
+    function() {
+        $(this).children().children('div').show();
+    },
+    function() {
+        $(this).children().children('div').hide();
+    }
+);
+
+$(".cebianbox-1").hover(
+    function() {
+        var width = getTotalWidth();
+        if (width < border_width) {
+            if ($('.btncb-1_off').is(":visible")) {
+                display_part_sidebar(width, 1);
+            } else {
+                display_full_sidebar(width, 1);
+            }
+        }
+    },
+    function() {
+        var width = getTotalWidth();
+        if (width < border_width) {
+            if ($('.btncb-1_off').is(":visible")) {
+                display_part_sidebar(width, 1);
+            } else {
+                display_full_sidebar(width, 1);
+            }
+        }
+    }
+);
+
+window.onresize = function() {
+    var width = getTotalWidth();
+    if (width < 1600) {
+        $("#new_reg_left").hide();
+    } else {
+        $("#new_reg_left").show();
+    }
+    if (width < border_width) {
+        display_part_sidebar(width);
+
+    } else {
+        display_full_sidebar(width);
+    }
+}
+
+function getTotalHeight() {
+    if ($.browser.msie) {
+        return document.compatMode == "CSS1Compat" ? document.documentElement.clientHeight : document.body.clientHeight;
+    } else {
+        return self.innerHeight;
+    }
+}
+
+function getTotalWidth() {
+    if ($.browser.msie) {
+        return document.compatMode == "CSS1Compat" ? document.documentElement.clientWidth : document.body.clientWidth;
+    } else {
+        return self.innerWidth;
+    }
+}
+
+function display_full_sidebar(width, is_switch) {
+    //$('.cebianbox-1').css('background','url(Images/sidebar/cebianbg1121-1.png) repeat;');
+    $('.btncb-1_off').show();
+    $('.btncb-2_off').show();
+    $('.btncb-3_off').show();
+    $('.btncb-4_off').show();
+    //$('.btncb-4_off2').attr('class','btncb-4_off');
+    $('.btncb-5_off').show();
+    $('.btncb-6_off').show();
+    $('.btncb-7_off').show();
+    $('.btncb-8_off').show();
+    $('#sidebar-nav').attr('bgcolor', '#333');
+    var height_rate = getTotalHeight() / screen.height;
+    var extra_margin = width >= border_width ? 0 : 138;
+    if (is_switch == 1) {
+        extra_margin = 0;
+    }
+    var margin = 150 * height_rate + extra_margin;
+    $('.conbox1121-1').css('margin-top', margin + "px");
+}
+
+
+function display_part_sidebar(width, is_switch) {
+    //console.log('part');
+    //$('.cebianbox-1').css('background','none');
+    $('.btncb-1_off').hide();
+    $('.btncb-2_off').hide();
+    $('.btncb-3_off').hide();
+    $('.btncb-4_off').hide();
+    //$('.btncb-4_off').attr('class','btncb-4_off2');
+    $('.btncb-5_off').hide();
+    $('.btncb-6_off').hide();
+    $('.btncb-7_off').hide();
+    $('.btncb-8_off').hide();
+    $('#sidebar-nav').attr('bgcolor', '');
+    var height_rate = getTotalHeight() / screen.height;
+    var extra_margin = width >= border_width ? 0 : 138;
+    var margin = 150 * height_rate + extra_margin;
+    $('.conbox1121-1').css('margin-top', margin + "px");
+}
+</script>
+
+</body>
+
+</html>
