@@ -1,4 +1,4 @@
-# A glance of GIT commends
+# A glance of GIT commands
 
 
 
@@ -242,6 +242,10 @@ nothing to commit (working directory clean)
 ### 批量删除远程分支
 
 `git branch -r| awk -F '[/]' '/regExp/ {printf"%s/%s\n",$2,$3}' |xargs -I{} git push origin :{}`
+
+### 刷新远程分支
+
+`git remote update origin --prune`
 
 ---
 
