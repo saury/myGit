@@ -243,6 +243,22 @@ nothing to commit (working directory clean)
 
 `git branch -r| awk -F '[/]' '/regExp/ {printf"%s/%s\n",$2,$3}' |xargs -I{} git push origin :{}`
 
+### 批量删除4周前分支
+
+```bash
+for k in $(git branch -r | sed /\*/d); do
+   if [ -z "$(git log -1 --since='4 week ago' -s $k)" ]; then
+    ## Info about the branches before deleting
+    branch_name_with_no_origin=$(echo $k | sed -e "s/origin\///")
+    echo deleting branch: $branch_name_with_no_origin
+    ## Delete from the remote
+    git push origin --delete $branch_name_with_no_origin;
+    ## Delete the local branch, regardless of whether it's been merged or not
+    git branch -D $branch_name_with_no_origin
+  fi;
+done
+```
+
 ### 刷新远程分支
 
 `git remote update origin --prune`
